@@ -7,7 +7,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Support US</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./fonts/zawgyi_font_override.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./fonts/pyidaungsu_font_override.css'>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,43 +15,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <script>
-        function fallbackCopyTextToClipboard(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-
-            // Avoid scrolling to bottom
-            textArea.style.top = "0";
-            textArea.style.left = "0";
-            textArea.style.position = "fixed";
-
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-
-            try {
-                var successful = document.execCommand('copy');
-                var msg = successful ? 'successful' : 'unsuccessful';
-                console.log('Fallback: Copying text command was ' + msg);
-            } catch (err) {
-                console.error('Fallback: Oops, unable to copy', err);
-            }
-
-            document.body.removeChild(textArea);
-        }
-
-        function copyTextToClipboard(text) {
-            if (!navigator.clipboard) {
-                fallbackCopyTextToClipboard(text);
-                return;
-            }
-            navigator.clipboard.writeText(text).then(function () {
-                console.log('Async: Copying to clipboard was successful!');
-            }, function (err) {
-                console.error('Async: Could not copy text: ', err);
-            });
-        }
-    </script>
 
     <style>
         .card {
@@ -63,136 +26,14 @@
 
 <body>
 
-
     <div class="container">
-
-        <!-- KBZ Pay -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail" src="./images/kbz_pay.png" alt="...">
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h5 class="card-title">KBZ Pay</strong>
-                        </div>
-                        <div>099 6808 9989</div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm"
-                                onclick="fallbackCopyTextToClipboard('09968089989')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KBZ Bank -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail" src="./images/kbz.png" alt="...">
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h5 class="card-title">KBZ Bank</strong>
-                        </div>
-                        <div>3173-0199-9182-19401</div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm"
-                                onclick="fallbackCopyTextToClipboard('31730199918219401')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Aya Pay -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail" src="./images/aya_pay.png" alt="...">
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h5 class="card-title">AYA Pay</h5>
-                        </div>
-                        <div class="card-text">099 6808 9989</div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm"
-                                onclick="fallbackCopyTextToClipboard('09968089989')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Aya Bank -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail" src="./images/aya.png" alt="...">
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h5 class="card-title">AYA Bank</h5>
-                        </div>
-                        <div class="card-text">2000-5356-751</div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm"
-                                onclick="fallbackCopyTextToClipboard('20005356751')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CB Pay -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail" src="./images/cb.png" alt="...">
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h5 class="card-title">CB Pay</h5>
-                        </div>
-                        <div class="card-text">099 6808 9989</div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm"
-                                onclick="fallbackCopyTextToClipboard('09968089989')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CB Bank -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail" src="./images/cb.png" alt="...">
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h5 class="card-title">CB Bank</h5>
-                        </div>
-                        <div class="card-text">0015-6001-0000-5312</div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm"
-                                onclick="fallbackCopyTextToClipboard('0015600100005312')">Copy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        If you have any suggestions on the app, please contact
+        <a href="mailto: chanmratekoko.dev@gmail.com">chanmratekoko.dev@gmail.com</a>.
+        <br />
+        App နှင့်ပတ်သတ်ပြီး အကြံပေးလိုပါက <a href="mailto: chanmratekoko.dev@gmail.com">chanmratekoko.dev@gmail.com</a>
+        ကို ဆက်သွယ်ပြီး အကြံပေးနိုင်ပါတယ်။
     </div>
 
 </body>
+
 </html>

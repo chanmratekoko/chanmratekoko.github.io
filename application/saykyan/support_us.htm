@@ -15,6 +15,43 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+    <script>
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Fallback: Copying text command was ' + msg);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function () {
+                console.log('Async: Copying to clipboard was successful!');
+            }, function (err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+    </script>
 
     <style>
         .card {
@@ -26,12 +63,136 @@
 
 <body>
 
+
     <div class="container">
-        If you have any suggestions on the app, please contact chanmratekoko.dev@gmail.com.
-        <br />
-        App နှင့်ပတ်သတ်ပြီး အကြံပေးလိုပါက chanmratekoko.dev@gmail.com ကို ဆက်သွယ်ပြီး အကြံပေးနိုင်ပါတယ်။
+
+        <!-- KBZ Pay -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-thumbnail" src="./images/kbz_pay.png" alt="...">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h5 class="card-title">KBZ Pay</strong>
+                        </div>
+                        <div>099 6808 9989</div>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                onclick="fallbackCopyTextToClipboard('09968089989')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KBZ Bank -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-thumbnail" src="./images/kbz.png" alt="...">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h5 class="card-title">KBZ ဘဏ်</strong>
+                        </div>
+                        <div>3173-0199-9182-19401</div>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                onclick="fallbackCopyTextToClipboard('31730199918219401')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aya Pay -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-thumbnail" src="./images/aya_pay.png" alt="...">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h5 class="card-title">AYA Pay</h5>
+                        </div>
+                        <div class="card-text">099 6808 9989</div>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                onclick="fallbackCopyTextToClipboard('09968089989')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aya ဘဏ် -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-thumbnail" src="./images/aya.png" alt="...">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h5 class="card-title">AYA ဘဏ်</h5>
+                        </div>
+                        <div class="card-text">2000-5356-751</div>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                onclick="fallbackCopyTextToClipboard('20005356751')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CB Pay -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-thumbnail" src="./images/cb.png" alt="...">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h5 class="card-title">CB Pay</h5>
+                        </div>
+                        <div class="card-text">099 6808 9989</div>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                onclick="fallbackCopyTextToClipboard('09968089989')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CB Bank -->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-thumbnail" src="./images/cb.png" alt="...">
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h5 class="card-title">CB ဘဏ်</h5>
+                        </div>
+                        <div class="card-text">0015-6001-0000-5312</div>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                onclick="fallbackCopyTextToClipboard('0015600100005312')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
-
 </html>
